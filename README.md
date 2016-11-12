@@ -10,8 +10,8 @@ Give it a try! Click the button below to fork the repository that contains the s
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/hlarubi/audio-analysis/)
 
-#You can see a version of this app that is already running by clicking
-#[here](https://audio-analysis.mybluemix.net/).
+You can see a version of this app that is already running by clicking
+[here](https://audio-analysis.mybluemix.net/).
 
 **Note**: This sample application only works on desktop computer
 systems, and then only in the Firefox and Chrome web browsers.
