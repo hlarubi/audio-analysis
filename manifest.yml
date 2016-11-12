@@ -7,7 +7,7 @@ declared-services:
     label: speech_to_text
     plan: standard
 applications:
-- name: audio-analysis-starter-kit
+- name: MinDef-sample-app
   path: .
   command: npm start
   memory: 512M

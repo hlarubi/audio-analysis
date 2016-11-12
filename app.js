@@ -19,7 +19,7 @@ require('dotenv').config({ silent: true });
 var express = require('express');
 var vcapServices = require('vcap_services');
 var extend = require('extend');
-var AlchemyLanguageV1 = require('watson-developer-cloud/alchemy-language/v1');
+var watson  = require('watson-developer-cloud');
 var AuthorizationV1 = require('watson-developer-cloud/authorization/v1');
 var youtube = require('./youtube');
 
@@ -31,8 +31,9 @@ var authService = new AuthorizationV1(extend({
   url: process.env.SPEECH_TO_TEXT_URL
 }, vcapServices.getCredentials('speech_to_text')));
 
-var alchemyLanguage = new AlchemyLanguageV1({
-  api_key: process.env.ALCHEMY_LANGUAGE_API_KEY || '<default-api-key>'
+var alchemyLanguage = new watson.alchemy_language({
+// If no API Key is provided here, the watson-developer-cloud@2.x.x library will check for an ALCHEMY_LANGUAGE_API_KEY environment property and then fall back to the VCAP_SERVICES property provided by Bluemix.
+//  api_key: process.env.ALCHEMY_LANGUAGE_API_KEY || '<default-api-key>'
 });
 
 // Bootstrap application settings
@@ -62,8 +63,8 @@ app.post('/api/concepts', function(req, res, next) {
 //     }
 //   );
 
-  // For now return an static concept
-  res.json({ concepts: [{text: "Not a real concept", relevance: "0.99"}]});
+  // For now return an static concept - Comment out this line
+  // res.json({ concepts: [{text: "Not a real concept", relevance: "0.99"}]});
 });
 
 app.get('/api/video', function(req, res, next) {
