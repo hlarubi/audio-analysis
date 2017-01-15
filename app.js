@@ -34,7 +34,7 @@ var authService = new AuthorizationV1(extend({
 // Comment out the line below to enable AlchemyLanguage get concepts call.
 var alchemyLanguage = new watson.alchemy_language({
   // If no API Key is provided here, the watson-developer-cloud@2.x.x library will check for an ALCHEMY_LANGUAGE_API_KEY environment property and then fall back to the VCAP_SERVICES property provided by Bluemix.
-    api_key: process.env.ALCHEMY_LANGUAGE_API_KEY || '<default-api-key>'
+//    api_key: process.env.ALCHEMY_LANGUAGE_API_KEY || '<default-api-key>'
 });
 
 // Bootstrap application settings
